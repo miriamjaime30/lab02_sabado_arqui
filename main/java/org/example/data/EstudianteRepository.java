@@ -13,7 +13,7 @@ public class EstudianteRepository {
     private final String archivo = "data/estudiantes.json";
     private final Gson gson = new Gson();
 
-    public List <Estudiante> Listar(){
+    public List <Estudiante> listar(){
         try(Reader reader = new FileReader(archivo)){
             Type tipo= new TypeToken <List <Estudiante>>() {}.getType();
             List<Estudiante> estudiantes= gson.fromJson(reader,tipo);
@@ -24,6 +24,7 @@ public class EstudianteRepository {
         }
     }
     public void guardar(List<Estudiante> estudiantes) {
+        new File("data").mkdir();
         try(Writer writer = new FileWriter(archivo)){
             gson.toJson(estudiantes,writer);
         }catch (Exception e){
