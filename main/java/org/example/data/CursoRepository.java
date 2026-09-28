@@ -22,7 +22,7 @@ public class CursoRepository {
     private final String archivo = "data/cursos.json";
     private final Gson gson = new Gson();
 
-    public List<Cursos>listar(){
+    public List<Curso>listar(){
         try (Reader reader = new FileReader(archivo)){
             Type tipo = new TypeToken<List<Curso>>(){}.getType();
             List<Curso> cursos = gson.fromJson(reader, tipo);
@@ -36,7 +36,7 @@ public class CursoRepository {
     public  void guardar (List<Curso>cursos){
         new File("data").mkdirs();
         try(Writer writer = new FileWriter(archivo)){
-            gson.toJson(curso, writer);
+            gson.toJson(cursos, writer);
 
         }catch (Exception e){
             System.out.println("Error al guardar Curso");
