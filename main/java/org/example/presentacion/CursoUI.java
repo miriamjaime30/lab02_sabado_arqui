@@ -30,10 +30,10 @@ public class CursoUI {
                     System.out.print("Creditos: ");
                     int creditos = sc.nextInt();
                     sc.nextLine();
-                    System.out.print("Id: ");
+                    System.out.print("Docente: ");
                     String docente = sc.nextLine();
                     service.registrar(new Curso(id, nombre, creditos, docente));
-                    System.out.print("Curso resgistrado");
+                    System.out.print("Curso registrado");
                     break;
                 }
                 case 2:
