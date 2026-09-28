@@ -25,6 +25,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Ha elegido Gestionar Curso.");
+                    CursoUI.mostrarMenu(sc);
 
                     break;
                 case 0:
